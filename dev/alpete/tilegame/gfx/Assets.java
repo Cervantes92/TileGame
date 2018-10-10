@@ -8,7 +8,8 @@ public class Assets {
 	private static final int width = 32, height = 32;
 	
 	//Font 
-	public static Font font28;
+	//public static Font font28;
+	public static Font timesRoman;
 	
 	//Menu Items
 	public static BufferedImage[] startButton;
@@ -38,7 +39,10 @@ public class Assets {
 	
 	public static void init() {
 		//font
-		font28 = FontLoader.loadFont("/res/Fonts/slkscr.ttf", 24);
+		//TODO: Fix or work around loading issue
+		//font28 = FontLoader.loadFont("/res/Fonts/slkscre.ttf", 24);
+		//WORKAROUND
+		timesRoman = new Font("TimesRoman", Font.PLAIN, 28);
 		
 		//Sprite Sheets
 		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/res/SpriteSheet/SpriteSheet3232320-alpha.png"));

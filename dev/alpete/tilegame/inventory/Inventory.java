@@ -1,6 +1,7 @@
 package dev.alpete.tilegame.inventory;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -38,12 +39,11 @@ public class Inventory {
 			return;
 		
 		//Inventory Test No Apple?
-		System.out.println("Inventory: ");
-		for(Item i : inventoryItems) {
-			System.out.println(i.getName() + "  " + i.getCount());
-		}
-		
+		//System.out.println("Inventory: ");
+		//for(Item i : inventoryItems) {
+		//	System.out.println(i.getName() + "  " + i.getCount()); }
 	}
+		
 	
 	public void render(Graphics g) {
 		if(!active)
@@ -53,7 +53,9 @@ public class Inventory {
 		g.drawImage(Assets.inventoryScreen, invX , invY, invWidth, invHeight, null);
 		
 		//Draw items in screen
-		Text.drawString(g, "You get <item>", invListCenterX, invListCenterY, true, Color.WHITE, Assets.font28);
+		//TODO: Fix .ttf import bug so we can draw text to the screen
+		//Text.drawString(g, "You get <item>", invListCenterX, invListCenterY, true, Color.WHITE, Assets.font28);
+		Text.drawString(g, "Something Here", invListCenterX, invListCenterY, true, Color.white, Assets.timesRoman);
 	}
 	//Inventory Methods
 	public void addItem(Item item) {
