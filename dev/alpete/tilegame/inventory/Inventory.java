@@ -92,11 +92,23 @@ public class Inventory {
 			//Check and see if item index is outside field
 			if(selectedItem + i < 0 || selectedItem + i >= len)
 				continue;
-			Text.drawString(g, inventoryItems.get(selectedItem + i).getName(), invListCenterX, 
+			
+			//Highlight currently selected item with > < and color yellow
+			if(i == 0) {
+				Text.drawString(g,"> " + inventoryItems.get(selectedItem + i).getName() + " <", invListCenterX, 
+						invListCenterY + i * invListSpacing, true, Color.YELLOW, Assets.timesRoman);
+			} else {
+				Text.drawString(g, inventoryItems.get(selectedItem + i).getName(), invListCenterX, 
 					invListCenterY + i * invListSpacing, true, Color.WHITE, Assets.timesRoman);
-			
-			
+			}
 		}
+		
+		//Draw item in item pane
+		Item item = inventoryItems.get(selectedItem);
+		g.drawImage(item.getTexture(), invImageX, invImageY, invImageWidth, invImageHeight, null);
+		
+		//Draw item count in count pane
+		Text.drawString(g, Integer.toString(item.getCount()), invCountX, invCountY, true, Color.WHITE, Assets.timesRoman);
 	}
 	//Inventory Methods
 	public void addItem(Item item) {
