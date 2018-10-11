@@ -23,7 +23,6 @@ Planned updates
 <ul>
 <li>Cohesive inventort system with mouse interface</li>
 <li>Improved snapier animations with keyframes</li>
-<li>Import .ttf file to display text to canvas</li>
 </ul>
 </p>
 </body>
