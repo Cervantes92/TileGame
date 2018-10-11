@@ -42,7 +42,7 @@ public class Assets {
 		//TODO: Fix or work around loading issue
 		//font28 = FontLoader.loadFont("/res/Fonts/slkscre.ttf", 24);
 		//WORKAROUND
-		timesRoman = new Font("TimesRoman", Font.PLAIN, 28);
+		timesRoman = new Font("TimesRoman", Font.PLAIN, 20);
 		
 		//Sprite Sheets
 		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/res/SpriteSheet/SpriteSheet3232320-alpha.png"));

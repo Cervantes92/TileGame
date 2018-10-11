@@ -86,6 +86,10 @@ public class Player extends Creature {
 		if(attackTimer < attackCooldown)
 			return;
 		
+		//Check if inventory screen is active
+		if(inventory.isActive())
+			return;
+		
 		//Collision Bounds
 		Rectangle cb = getCollisionBounds(0, 0);
 		
@@ -137,6 +141,10 @@ public class Player extends Creature {
 	private void getInput() {
 		xMove = 0;
 		yMove = 0;
+		
+		//Check if inventory screen is active
+		if(inventory.isActive())
+			return;
 		
 		if(handler.getKeyManager().up)
 			yMove = -speed;
